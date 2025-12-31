@@ -2,30 +2,30 @@
   "name": "@mcpf/conformance",
   "version": "1.0.0-alpha",
   "description": "MCPF Conformance Test Suite",
-  "main": "dist/index.js",
+  "main": "index.js",
   "bin": {
-    "mcpf-test": "./bin/mcpf-test.js",
-    "mcpf-report": "./bin/mcpf-report.js",
-    "mcpf-badge": "./bin/mcpf-badge.js"
+    "mcpf-test": "./bin/mcpf-test.js"
   },
   "scripts": {
-    "build": "tsc",
     "test": "jest",
     "test:ans": "jest test-suites/ans",
-    "test:a2a": "jest test-suites/a2a"
+    "test:a2a": "jest test-suites/a2a",
+    "test:registry": "jest test-suites/registry",
+    "test:did-vc": "jest test-suites/did-vc"
   },
   "keywords": ["mcpf", "conformance", "testing"],
   "author": "MCP Trust Framework Contributors",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.6.0",
-    "jsonschema": "^1.4.1",
-    "chalk": "^5.3.0"
+    "ajv": "^8.12.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.0",
-    "@types/node": "^20.10.0",
-    "jest": "^29.7.0",
-    "typescript": "^5.3.0"
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/*.test.js"]
   }
 }

@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["name", "version", "did", "provider", "capabilities", "endpoints"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[\\w-]+(\\.[\\w-]+)*\\.agent$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "did": {
+      "type": "string",
+      "pattern": "^did:[\\w]+:[\\w.:%-]+$"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "endpoints": {
+      "type": "object",
+      "required": ["agent"],
+      "properties": {
+        "agent": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "suspended", "deprecated"]
+    }
+  }
+}

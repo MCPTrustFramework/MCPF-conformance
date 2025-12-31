@@ -1,0 +1,10 @@
+{
+  "endpoints": {
+    "ans": "http://localhost:4001",
+    "registry": "http://localhost:4002",
+    "a2a": "http://localhost:4003"
+  },
+  "timeout": 5000,
+  "retries": 3,
+  "verbose": true
+}
